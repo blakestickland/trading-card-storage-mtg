@@ -2,9 +2,12 @@ package io.nology.tradingcardsspringboot.controllers;
 
 import io.nology.tradingcardsspringboot.entities.Card;
 import io.nology.tradingcardsspringboot.payloads.cards.CardCreate;
+import io.nology.tradingcardsspringboot.payloads.cards.CardUpdatePayload;
 import io.nology.tradingcardsspringboot.services.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -53,4 +56,31 @@ public class CardController {
 
         this.cardService.deleteById(id);
     }
+
+//    @PatchMapping(value = "/{id}")
+////    @ResponseStatus(value = HttpStatus.CREATED)
+////    public Card update(@Valid @PathVariable Long id, @RequestBody CardUpdatePayload payload) {
+////        this.cardService.find(id)
+////                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Card not found"));
+////        return this.cardService.update(id, payload);
+////    }
+//    public ResponseEntity<Card> updateCardPartially(
+//            @PathVariable(value = "id") Long id,
+//            @Valid @RequestBody CardUpdatePayload payload) {
+//            Card card = this.cardService.find(id).get();
+////                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Card not found"));
+//
+//            card.setName(payload.getName());
+//            card.setManaCost(payload.getManaCost());
+//            card.setBasicType(payload.getBasicType());
+//            card.setDetailedType(payload.getDetailedType());
+//            card.setInStorage(payload.getInStorage());
+//            final Card updatedCard = this.cardService.create(card);
+//            return ResponseEntity.ok(updatedCard);
+//    }
+//    )
+//    @PatchMapping(value = "{id}")
+//    public Card update(@PathVariable Long id, @RequestBody CardUpdatePayload payload) {
+//        return this.cardService.update(id, payload);
+//    }
 }
