@@ -20,7 +20,7 @@ const ListCardsComponent = () => {
     // });
     axios.get(`http://127.0.0.1:8080/cards`)
       .then((response) => {
-        console.log(response.data);
+        console.log(response);
         setCards(response.data);
     });
   };
