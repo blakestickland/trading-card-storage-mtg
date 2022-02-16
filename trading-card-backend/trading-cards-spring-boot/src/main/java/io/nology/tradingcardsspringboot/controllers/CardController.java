@@ -20,6 +20,7 @@ public class CardController {
     @Autowired
     private CardService cardService;
 
+    // TESTS
     @GetMapping(value = "/test")
     public String test() {
         return "hallo, world!";
@@ -33,24 +34,31 @@ public class CardController {
         return String.format("hellllooo, %s! You are %d years old, aren't you?", name, age);
     }
 
-    // Create cards --> POST Mapping
+    // Create cards
+    // POST "/cards"
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
     public void  save(@Valid @RequestBody CardCreate card) { this.cardService.create(card); }
 
+    // Read cards
+    // GET "/cards"
     @GetMapping
     public List<Card> all() { return this.cardService.all(); }
 
+    // Read single card
+    // GET "/cards/{id}"
     @GetMapping(value = "/{id}")
-    public Card find(@PathVariable Long id) {
+    public Card find(@PathVariable int id) {
         return this.cardService
-                .find(id)      // Optional<Card>
-                .orElseThrow (() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Card not found"));
+                .find(id)      // dOptional<Card>
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Card not found"));
     }
 
+    // Delete single card
+    // DELETE "/cards/{id}"
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable int id) {
         this.cardService.find(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Card not found"));
 

@@ -17,23 +17,40 @@ public class CardService {
     @Autowired
     private CardRepository cardRepository;
 
+    // Find all cards
     public List<Card> all() {
         return this.cardRepository.findAll();
     }
 
+    // Create a single card
     public void create(CardCreate card) {
-        Card dbCard = new Card(card.getName(), card.getManaCost(), card.getBasicType(), card.getDetailedType(), card.getInStorage());
+        Card dbCard = new Card(
+                card.getName(),
+                card.getManaCostId(),
+                card.getTypeLineId(),
+                card.getExpansionSymbolId(),
+                card.getAbilities(),
+                card.getFlavourText(),
+                card.getSymbolRarity(),
+                card.getArtistInfo(),
+                card.getCollectorNum(),
+                card.getPowerTough(),
+                card.getCardBorderId()
+        );
         cardRepository.save(dbCard);
     }
 
-    public Optional<Card> find(Long id) {
+    // Find a single card
+    public Optional<Card> find(int id) {
         return this.cardRepository.findById(id);
     }
 
-    public void deleteById(Long id) {
+    // Delete a single card
+    public void deleteById(int id) {
          this.cardRepository.deleteById(id);
     }
 
+    // Update a single card
 //    public Card update(Long id, CardUpdatePayload card) {
 //        Card dbCard = new Card(card.getName(), card.getManaCost(), card.getBasicType(), card.getDetailedType(), card.getInStorage());
 //        cardRepository.save(dbCard);

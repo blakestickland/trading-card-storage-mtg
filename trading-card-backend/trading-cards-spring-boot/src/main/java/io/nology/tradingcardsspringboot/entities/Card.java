@@ -13,26 +13,55 @@ public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter @Setter
-    private Long id;
+    private int id;
 
     @Getter @Setter
     private String name;
     @Getter @Setter
-    private Integer manaCost;
+    private int manaCostId;
     @Getter @Setter
-    private String basicType;
+    private int typeLineId;
     @Getter @Setter
-    private String detailedType;
+    private int expansionSymbolId;
     @Getter @Setter
-    private Boolean inStorage;
+    private String abilities;
+    @Getter @Setter
+    private String flavourText;
+    @Getter @Setter
+    private String symbolRarity;
+    @Getter @Setter
+    private String artistInfo;
+    @Getter @Setter
+    private int collectorNum;
+    @Getter @Setter
+    private String powerTough;
+    @Getter @Setter
+    private int cardBorderId;
 
-    public Card(String name, Integer manaCost, String basicType,
-                String detailedType, Boolean inStorage) {
+    public Card(
+            String name,
+            int manaCostId,
+            int typeLineId,
+            int expansionSymbolId,
+            String abilities,
+            String flavourText,
+            String symbolRarity,
+            String artistInfo,
+            int collectorNum,
+            String powerTough,
+            int cardBorderId
+    ) {
         this.name = name;
-        this.manaCost = manaCost;
-        this.basicType = basicType;
-        this.detailedType = detailedType;
-        this.inStorage = inStorage;
+        this.manaCostId = manaCostId;
+        this.typeLineId = typeLineId;
+        this.expansionSymbolId = expansionSymbolId;
+        this.abilities = abilities;
+        this.flavourText = flavourText;
+        this.symbolRarity = symbolRarity;
+        this.artistInfo = artistInfo;
+        this.collectorNum = collectorNum;
+        this.powerTough = powerTough;
+        this.cardBorderId = cardBorderId;
     }
 
     public Card() {}
