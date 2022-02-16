@@ -24,22 +24,29 @@ public class CardService {
 
     // Create a single card
     public void create(CardCreate card) {
-        Card dbCard = new Card(card.getName(), card.getCollectorNum()
-                , card.getManaCostId(), card.getTypeLineId(), card.getExpansionSymbolId()
-                , card.getAbilities(), card.getFlavourText(), card.getSymbolRarity(), card.getArtistInfo()
-                , card.getPowerTough()
-               , card.getCardBorderId()
+        Card dbCard = new Card(
+                card.getName(),
+                card.getManaCostId(),
+                card.getTypeLineId(),
+                card.getExpansionSymbolId(),
+                card.getAbilities(),
+                card.getFlavourText(),
+                card.getSymbolRarity(),
+                card.getArtistInfo(),
+                card.getCollectorNum(),
+                card.getPowerTough(),
+                card.getCardBorderId()
         );
         cardRepository.save(dbCard);
     }
 
     // Find a single card
-    public Optional<Card> find(Long id) {
+    public Optional<Card> find(int id) {
         return this.cardRepository.findById(id);
     }
 
     // Delete a single card
-    public void deleteById(Long id) {
+    public void deleteById(int id) {
          this.cardRepository.deleteById(id);
     }
 

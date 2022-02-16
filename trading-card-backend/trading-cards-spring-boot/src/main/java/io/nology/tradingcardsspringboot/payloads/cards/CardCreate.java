@@ -11,13 +11,13 @@ public class CardCreate {
     String name;
 
     @Getter @Setter @NonNull
-    Long manaCostId;
+    int manaCostId;
 
     @Getter @Setter @NonNull
-    Long typeLineId;
+    int typeLineId;
 
     @Getter @Setter @NonNull
-    Long expansionSymbolId;
+    int expansionSymbolId;
 
     @Getter @Setter @NotBlank
     String abilities;
@@ -38,5 +38,5 @@ public class CardCreate {
     String powerTough;
 
     @Getter @Setter @NonNull
-    Long cardBorderId;
+    int cardBorderId;
 }

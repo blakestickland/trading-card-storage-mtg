@@ -13,16 +13,16 @@ public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter @Setter
-    private Long id;
+    private int id;
 
     @Getter @Setter
     private String name;
     @Getter @Setter
-    private Long manaCostId;
+    private int manaCostId;
     @Getter @Setter
-    private Long typeLineId;
+    private int typeLineId;
     @Getter @Setter
-    private Long expansionSymbolId;
+    private int expansionSymbolId;
     @Getter @Setter
     private String abilities;
     @Getter @Setter
@@ -36,13 +36,20 @@ public class Card {
     @Getter @Setter
     private String powerTough;
     @Getter @Setter
-    private Long cardBorderId;
+    private int cardBorderId;
 
-    public Card(String name, int collectorNum,
-             Long manaCostId, Long typeLineId, Long expansionSymbolId, String abilities
-            , String flavourText, String symbolRarity, String artistInfo
-                , String powerTough
-                , Long cardBorderId
+    public Card(
+            String name,
+            int manaCostId,
+            int typeLineId,
+            int expansionSymbolId,
+            String abilities,
+            String flavourText,
+            String symbolRarity,
+            String artistInfo,
+            int collectorNum,
+            String powerTough,
+            int cardBorderId
     ) {
         this.name = name;
         this.manaCostId = manaCostId;
