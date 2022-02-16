@@ -11,14 +11,32 @@ public class CardCreate {
     String name;
 
     @Getter @Setter @NonNull
-    Integer manaCost;
-
-    @Getter @Setter @NotBlank
-    String basicType;
-
-    @Getter @Setter @NotBlank
-    String detailedType;
+    Long manaCostId;
 
     @Getter @Setter @NonNull
-    Boolean inStorage;
+    Long typeLineId;
+
+    @Getter @Setter @NonNull
+    Long expansionSymbolId;
+
+    @Getter @Setter @NotBlank
+    String abilities;
+
+    @Getter @Setter @NotBlank
+    String flavourText;
+
+    @Getter @Setter @NotBlank
+    String SymbolRarity;
+
+    @Getter @Setter @NotBlank
+    String artistInfo;
+
+    @Getter @Setter @NonNull
+    int collectorNum;
+
+    @Getter @Setter @NotBlank
+    String powerTough;
+
+    @Getter @Setter @NonNull
+    Long cardBorderId;
 }

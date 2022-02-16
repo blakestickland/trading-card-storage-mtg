@@ -44,8 +44,8 @@ public class CardController {
     @GetMapping(value = "/{id}")
     public Card find(@PathVariable Long id) {
         return this.cardService
-                .find(id)      // Optional<Card>
-                .orElseThrow (() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Card not found"));
+                .find(id)      // dOptional<Card>
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Card not found"));
     }
 
     @DeleteMapping(value = "/{id}")

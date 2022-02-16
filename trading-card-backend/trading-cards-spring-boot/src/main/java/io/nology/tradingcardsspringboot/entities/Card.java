@@ -18,21 +18,43 @@ public class Card {
     @Getter @Setter
     private String name;
     @Getter @Setter
-    private Integer manaCost;
+    private Long manaCostId;
     @Getter @Setter
-    private String basicType;
+    private Long typeLineId;
     @Getter @Setter
-    private String detailedType;
+    private Long expansionSymbolId;
     @Getter @Setter
-    private Boolean inStorage;
+    private String abilities;
+    @Getter @Setter
+    private String flavourText;
+    @Getter @Setter
+    private String symbolRarity;
+    @Getter @Setter
+    private String artistInfo;
+    @Getter @Setter
+    private int collectorNum;
+    @Getter @Setter
+    private String powerTough;
+    @Getter @Setter
+    private Long cardBorderId;
 
-    public Card(String name, Integer manaCost, String basicType,
-                String detailedType, Boolean inStorage) {
+    public Card(String name, int collectorNum,
+             Long manaCostId, Long typeLineId, Long expansionSymbolId, String abilities
+            , String flavourText, String symbolRarity, String artistInfo
+                , String powerTough
+                , Long cardBorderId
+    ) {
         this.name = name;
-        this.manaCost = manaCost;
-        this.basicType = basicType;
-        this.detailedType = detailedType;
-        this.inStorage = inStorage;
+        this.manaCostId = manaCostId;
+        this.typeLineId = typeLineId;
+        this.expansionSymbolId = expansionSymbolId;
+        this.abilities = abilities;
+        this.flavourText = flavourText;
+        this.symbolRarity = symbolRarity;
+        this.artistInfo = artistInfo;
+        this.collectorNum = collectorNum;
+        this.powerTough = powerTough;
+        this.cardBorderId = cardBorderId;
     }
 
     public Card() {}
